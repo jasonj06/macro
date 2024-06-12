@@ -22,12 +22,14 @@ try:
     monitor = int(argv[1])
 except:
     monitor = 1
+    print("Monitor has been set to default (1)")
 
 # Time interval between running, minimum 4 (seconds)
 try:
     interval = int(argv[2])
 except:
     interval = 60
+    print("Time interval has been set to default (60s)")
 
 if interval < 4:
     interval = 4
