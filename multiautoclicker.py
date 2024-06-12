@@ -77,7 +77,7 @@ def main():
 
     runtime = float(end - start)
     print("loop iteration:", loop_iterations)
-    print(f"Runtime: {runtime:.2f}s")
+    print(f"Uptime: {runtime:.2f}s")
 
 if __name__ == "__main__":
     try:
