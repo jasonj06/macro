@@ -30,6 +30,7 @@ try:
 except:
     interval = 60
     print("Time interval has been set to default (60s)")
+    print("\nIf you want to customise these settings, open cmd in file directory and run:\nmultiautoclicker.exe [monitor (1, 2)] [time interval in seconds]\nExample: multiautoclicker.exe 1 10 (monitor 1 with a 10 second interval)")
 
 if interval < 4:
     interval = 4
