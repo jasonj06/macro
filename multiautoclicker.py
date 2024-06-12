@@ -2,6 +2,9 @@ import pyautogui
 from time import sleep, time
 from sys import argv
 
+# Autoclicker specifically for having 4 windows open and needing to click in each of them, e.g. to not get afk kicked
+# TO RUN IN TERMINAL: python multiautoclicker.py [monitor selection (1,2)] [time interval (minimum 4 seconds)]
+
 ### Get mousepositions ###
 #for i in range (4):
 #    sleep(2)
@@ -13,18 +16,21 @@ print("Press ctrl+c in terminal to stop")
 loop_iterations = 0
 start = time()
 runtime = None
-monitor = None
 
-win1_mousepos = None
-win2_mousepos = None
-win3_mousepos = None
-win4_mousepos = None
-
-# Get argv input as monitor selection
+# Get argv input as monitor selection (1 or 2)
 try:
     monitor = int(argv[1])
 except:
     monitor = 1
+
+# Time interval between running, minimum 4 (seconds)
+try:
+    interval = int(argv[2])
+except:
+    interval = 60
+
+if interval < 4:
+    interval = 4
 
 # Mouseclick coordinates
 # First monitor
@@ -44,9 +50,9 @@ elif monitor == 2:
 def main():
     global loop_iterations
     global start
-    sleep(55)
-    print("Runs in 5 seconds...")
-    sleep(5)
+    sleep((interval-3))
+    print("Runs in 3 seconds...")
+    sleep(3)
 
     for _ in range(2):
         pyautogui.click(win1_mousepos)
