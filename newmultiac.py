@@ -36,8 +36,6 @@ def startmacro(event):
 
 def endmacro(event):
     global running
-
-    print("Macro stopped")
     running = False
 
 def macro():
@@ -90,7 +88,7 @@ def macro():
 
 app = gp.GooeyPieApp("Multiautoclicker")
 
-win2 = gp.Image(app, 'images/win2.png')
+#win2 = gp.Image(app, 'images/win2.png')
 
 header_lbl = gp.StyleLabel(app, "Multiclicker by Jason")
 header_lbl.font_size = 20
@@ -131,7 +129,7 @@ app.add(end_btn, 5, 2, align="right")
 app.add(runtime_lbl, 6, 1)
 
 ### windows visualizer, doesnt look good
-# app.add(win2, 5, 1)
+#app.add(win2, 7, 1, column_span=2)
 
 
 app.run()
