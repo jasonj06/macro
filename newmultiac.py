@@ -43,6 +43,9 @@ def endmacro(event):
 def macro():
     win_layout = int(win_layout_dd.selected_index)
     while running:
+        endtime = time()
+        runtime = endtime - starttime
+        runtime_lbl.text = f"Runtime: {runtime:.2f}s"
         if win_layout == 0:
             for _ in range(2):
                 pyautogui.click(mouse_pos[1])
@@ -129,5 +132,6 @@ app.add(runtime_lbl, 6, 1)
 
 ### windows visualizer, doesnt look good
 # app.add(win2, 5, 1)
+
 
 app.run()
