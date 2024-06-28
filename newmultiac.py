@@ -4,6 +4,10 @@ import gooeypie as gp
 import threading
 
 
+screen_res = pyautogui.size()
+screen_x = screen_res[0]
+screen_y = screen_res[1]
+
 mouse_pos = []
 starttime = None
 running = False
@@ -19,10 +23,10 @@ def startmacro(event):
     starttime = time()
 
     if monitor == 0:
-        mouse_pos.append((863, 260))
-        mouse_pos.append((1083, 264))
-        mouse_pos.append((1075, 755))
-        mouse_pos.append((822, 759))
+        mouse_pos.append((screen_x/2.2, screen_y/4.2))
+        mouse_pos.append((screen_x/1.8, screen_y/4.1))
+        mouse_pos.append((screen_x/1.8, screen_y/1.4))
+        mouse_pos.append((screen_x/2.3, screen_y/1.4))
 
     elif monitor == 1:
         mouse_pos.append((2717, 312))
